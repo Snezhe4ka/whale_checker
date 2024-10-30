@@ -1,0 +1,50 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Flask specific
+instance/
+*.pyc
+*.pyo
+
+# Environment variables
+.env
+
+# Python virtual environment
+venv/
+env/
+ENV/
+venv.bak/
+.vscode/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Logs
+*.log
+logs/
+*.out
+
+# IDE specific files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# MacOS specific files
+.DS_Store
+
+# PyCharm specific
+*.iml
+.idea/
+
+# SendGrid settings
+sendgrid.env.json
+
+# System files
+Thumbs.db
+

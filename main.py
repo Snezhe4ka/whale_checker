@@ -7,6 +7,7 @@ from sendgrid.helpers.mail import Mail
 import logging
 from dotenv import load_dotenv
 
+
 load_dotenv()
 
 app = Flask(__name__)
@@ -25,7 +26,6 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s:%(mess
 
 
 def send_email(subject, content):
-    """Send an email using SendGrid."""
     message = Mail(
         from_email=EMAIL_USER,
         to_emails=EMAIL_RECEIVER,
@@ -50,12 +50,11 @@ def is_valid_signature_for_string_body(body: str, signature: str) -> bool:
     ).hexdigest()
     return signature == digest
 
-
 @app.route('/alchemy-webhook', methods=['POST'])
 def alchemy_webhook():
     signature = request.headers.get('X-Alchemy-Signature')
     if not signature:
-        abort(403)  # forbidden if signature is missing
+        abort(403)
 
     # verify the signature
     str_body = request.get_data(as_text=True)
